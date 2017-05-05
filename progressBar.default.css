@@ -1,0 +1,25 @@
+.js_ProgressBar__parent{
+	position: relative;
+}
+.js_ProgressBar__outer.js_ProgressBar__show {
+	opacity: 1;
+	transform: translateY(0);
+}
+.js_ProgressBar__outer {
+	position: fixed;
+	z-index: 4;
+	top: 0;
+	left: 0;
+	width: 100%;
+	opacity: 0;
+	transform: translateY(-100%);
+	transition: transform 0.35s, opacity 0.35s;
+}
+.js_ProgressBar__bar {
+	height: 2px;
+	width: 0;
+	color: #ff7571;
+	background: currentColor;
+	box-shadow: -2px 1px 6px currentColor;
+	transition: width 0.35s;
+}

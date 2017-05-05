@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>progressBar</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css" />
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="../progressBar.default.css">
+</head>
+<body>
+	<div class="main">
+		<div class="content">
+			<h1 class="title"><span data-text='progress'>progress</span><span data-text='Bar'>Bar</span></h1>
+			<div class="buttons">
+				<div class="buttons-separator">
+					<button id="create" class='step'>Create</button>
+					<button id="show" class='step'>Show</button>
+					<button id="hide">Hide</button>
+				</div>
+				<div class="buttons-separator">
+					<button id="sub"><<</button>
+					<button id="update" class='step'>Update to random</button>
+					<button id="add">>></button>
+				</div>
+			</div>
+			<p class='description'>Плагин для самой простой реализации загрузочной полоски. Она появляется сверху, двигается и исчезает. Вся такая самостоятельная и вообще..</p>
+			<h2>Первые шаги</h2>
+			<p class="info">Не стоит забывать про подключение скрипта и стиля. Подсветка кода, которую я подключил работает только для javascript, поэтому я просто напишу названия файлов.</p>
+			<p class="code">progressBar.js
+progressBar.default.css</p>
+			<p class="info">Для начала использования плагина необходимо инициализировать</p>
+			<p class="code">var progress = new ProgressBar();</p>
+			<p class="info">Для того чтобы отобразить полосу необходимо вызвать метод <span>show</span></p>
+			<p class="code">progress.show();</p>
+			<p class="info">Чтобы задать значение полосе нужно передать значение в метод <span>value</span></p>
+			<p class="code">progress.value(50);</p>
+			<h2>Стилизация</h2>
+			<p class="info">Описание классов. Цвет можно указать в скрипте, а все остальное все равно менять придется через основной файл (<span>progressBar.default.css</span>), поэтому вот за что отвечает каждый класс</p>
+			<p class="code">.js_ProgressBar__parent{} //Родительский объект полосы (задается в скрипте options.place)
+.js_ProgressBar__outer{} //Контейнер для полосы
+.js_ProgressBar__outer.js_ProgressBar__show{} //Состояние контейнера, когда полоса на виду
+.js_ProgressBar__bart{} //Сама полоса
+</p>
+			<h2>API</h2>
+			<p class="info">Создание экземпляра плагина. Нужно назначить экзмепляр переменной, для дальнейшей работе с ним</p>
+			<p class="code">var progress = new ProgressBar({
+	place: "body",
+});</p>
+			<p class="info">Отображение полосы. Для созданного экземпляра при необходимости можно вызвать метод <span>show</span>, который создает DOM на странице и отображает элемент</p>
+			<p class="code">progress.show();</p>
+			<p class="info">Скрытие полосы. Для созданного экземпляра при необходимости можно вызвать метод <span>hide</span>, который скрывает элемент и удаляет DOM со страницы</p>
+			<p class="code">progress.hide();</p>
+			<p class="info">Установка значения. Принимает значения от 0 до 100 и устанавливает ширину полосы в процентах</p>
+			<p class="code">progress.value(50);</p>
+			<h2>События</h2>
+			<p class="info">События устанавливаются при создании экземпляра через методы</p>
+			<p class="info">Метод <span>onCreate</span> срабатывает при инициализации плагина</p>
+			<p class="code">var options = { onCreate : function(){} }</p>
+			<p class="info">Метод <span>onShow</span> срабатывает при показе полосы</p>
+			<p class="code">var options = { onShow : function(){} }</p>
+			<p class="info">Метод <span>onHide</span> срабатывает при скрытии полосы</p>
+			<p class="code">var options = { onHide : function(){} }</p>
+			<p class="info">Метод <span>onChange</span> срабатывает при изменении значения</p>
+			<p class="code">var options = { onChange : function(){} }</p>
+			<p class="info">Метод <span>onComplete</span> срабатывает при достижении <span>100%</span></p>
+			<p class="code">var options = { onComplete : function(){} }</p>
+			<p class="info">Метод <span>onEmpty</span> срабатывает при достижении <span>0%</span></p>
+			<p class="code">var options = { onEmpty : function(){} }</p>
+			<p class="download"><a href="https://github.com/jekyenin/progressbar">Изучить на GitHub</a></p>
+			<p class="download"><a href="https://github.com/jekyenin/progressbar/archive/master.zip">Скачать ZIP-архив с плагином</a></p>
+		</div>
+		<footer>
+			<div class="content">
+				<p>2017 <a href="http://evgenin.ru">evgenin.ru</a></p>
+			</div>
+		</footer>
+	</div>
+	<!-- GitHub ribbon -->
+	<a class="github-fork-ribbon" href="https://github.com/jekyenin/progressbar" title="Fork me on GitHub">Fork me on GitHub</a>
+	<script src="../progressBar.min.js"></script>
+	<script src="syntax.js"></script>
+	<script src="common.js"></script>
+</body>
+</html>
