@@ -1,5 +1,6 @@
 ProgressBar
 =========
+![ProgressBar](http://evgenin.ru/github/images/progressbar.jpg)
 
 Плагин для самой простой реализации загрузочной полоски. Она появляется сверху, двигается и исчезает.
 
